@@ -1,4 +1,6 @@
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -26,8 +28,8 @@ class MyServer{
                                 break;
                             }
                             System.out.println("From client: " + input);
-
-                            out.println("input length: "+input.length());
+                            BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+                            out.println(reader.readLine());
                         }
                     } catch (IOException e) { }
                 }
